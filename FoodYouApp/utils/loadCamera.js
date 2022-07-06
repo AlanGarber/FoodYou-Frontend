@@ -1,9 +1,6 @@
-<div id="webcam-container"></div>
-<div id="label-container" style="font-size: 100px;justify-content: center;margin-top: 3rem;"></div>
-<div id="Devices"></div>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-<script type="text/javascript">
+import tensorflow from '@tensorflow/tfjs'
+import teachablemachine from '@teachablemachine/image'
+    
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
@@ -13,7 +10,7 @@
     let model, webcam, labelContainer, maxPredictions;
 
     // Load the image model and setup the webcam
-    async function init() {
+    export async function init() {
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
 
@@ -43,14 +40,14 @@
         }
     }
 
-    async function loop() {
+    export async function loop() {
         webcam.update(); // update the webcam frame
         await predict();
         window.requestAnimationFrame(loop);
     }
 
     // run the webcam image through the image model
-    async function predict() {
+    export async function predict() {
         // predict can take in an image, video or canvas html element
         var objMasAlto;
         const prediction = await model.predict(webcam.canvas);
@@ -65,5 +62,3 @@
             }
         }
     }
-init();
-</script>

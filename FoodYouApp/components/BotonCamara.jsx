@@ -2,20 +2,19 @@ import React from 'react';
 import { Text, StyleSheet, TouchableOpacity, Linking,Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import cameraIcon from '../assets/cameraIcon.png'
-import Ionicons from 'react-native-vector-icons/Ionicons'
+import IonIcon from 'react-native-vector-icons/Ionicons'
 
 const BotonCamara = (props) => {
 
     const { onPress, text } = props
     //<Image style={styles.imgCamera}source={cameraIcon}></Image>
-
+    //<IonIcon name="camera-outline" color="white"/>
     return (
     
         <TouchableOpacity
-        Ionicons name="camera" size= "25rem"
-        style={styles.BotonCamara}
-        onPress={() => Linking.openURL('https://foodyoucamera.netlify.app/')}
-        />
+            onPress={() => Linking.openURL('https://foodyoucamera.netlify.app/')}>
+            
+        </TouchableOpacity>
     )
 }
 

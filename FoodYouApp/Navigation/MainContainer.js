@@ -3,17 +3,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
-import Home from './Screens/HomeScreen'
-import HistoryScreen from './Screens/HistoryScreen'
-import ProfileScreen from './Screens/ProfileScreen'
-import SearchScreen from './Screens/SearchScreen'
-import BotonCamara from '../components/BotonCamara';
+import Home from '../screens/HomeScreen'
+import HistoryScreen from '../screens/HistoryScreen'
+import ProfileScreen from '../screens/ProfileScreen'
+import SearchScreen from '../screens/SearchScreen'
+import CamaraScreen from '../screens/CamaraScreen';
 
 const homeName = 'Home';
 const historyName = 'History';
 const profileName = 'Profile';
 const searchName = 'Search';
-const CamaraName = 'Camara';
+const CamaraName = 'Camera';
 
 const Tab = createBottomTabNavigator();
 
@@ -35,7 +35,7 @@ export default function MainContainer(){
                                 iconName = focused ? 'person' : 'person-outline'
                             }else if (rn === searchName){
                                 iconName = focused ? 'search' : 'search-outline'
-                            }else if (rn === searchName){
+                            }else if (rn === CamaraName){
                                 iconName = focused ? 'camera' : 'camera-outline'
                             }
 
@@ -52,7 +52,7 @@ export default function MainContainer(){
 
                     <Tab.Screen name={homeName} component={Home}/>
                     <Tab.Screen name={searchName} component={SearchScreen}/>
-                    <Tab.Screen name={CamaraName} component={BotonCamara}/>
+                    <Tab.Screen name={CamaraName} component={CamaraScreen}/>
                     <Tab.Screen name={historyName} component={HistoryScreen}/>
                     <Tab.Screen name={profileName} component={ProfileScreen}/>
 
