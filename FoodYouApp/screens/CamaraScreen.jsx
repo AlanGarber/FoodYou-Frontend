@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import BotonCamara from '../components/BotonCamara.jsx'
 import { Camera, CameraType } from 'expo-camera';
-import init from '../utils/loadCamera.js';
+import {init,loop,predict} from '../utils/loadCamera.js';
 
 export default function CamaraScreen({navigation}) {
     const [hasPermission, setHasPermission] = useState(null);
@@ -23,8 +23,8 @@ export default function CamaraScreen({navigation}) {
     }
         return (
             <View>
-            <Camera type={CameraType.back}>
-              <View >
+            <Camera type={type} style={{height:'90%'}}>
+              <View>
                 <TouchableOpacity
                   
                   onPress={() => {
@@ -36,4 +36,11 @@ export default function CamaraScreen({navigation}) {
             </Camera>
           </View>
         );
+
+    const styles =StyleSheet.create({
+        CameraView:{
+            flex:1,
+            height:'100%'
+        }
+    });
 }

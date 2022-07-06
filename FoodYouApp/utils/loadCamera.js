@@ -30,7 +30,6 @@ import teachablemachine from '@teachablemachine/image'
         webcam = new tmImage.Webcam( document.body.clientWidth,  document.body.clientWidth, flip); // width, height, flip
         await webcam.setup({ facingMode: "environment" }); // request access to the webcam
         await webcam.play();
-        window.requestAnimationFrame(loop);
 
         // append elements to the DOM
         document.getElementById("webcam-container").appendChild(webcam.canvas);
@@ -38,12 +37,6 @@ import teachablemachine from '@teachablemachine/image'
         for (let i = 0; i < maxPredictions; i++) { // and class labels
             labelContainer.appendChild(document.createElement("div"));
         }
-    }
-
-    export async function loop() {
-        webcam.update(); // update the webcam frame
-        await predict();
-        window.requestAnimationFrame(loop);
     }
 
     // run the webcam image through the image model
