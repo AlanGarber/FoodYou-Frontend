@@ -1,12 +1,15 @@
 import * as React from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
+import InputApellido from '../components/InputApellido';
+import InputNombre from '../components/InputNombre';
+import BotonEnviar from '../components/BotonEnviar';
 
 export default function ProfileScreen({navigation}) {
     return(
         <View style={{flex: 1, alignItems: 'center', justifyContent:'center'}}>
-            <Text
-                onPress={()=> navigation.navigate('Profile')}
-                style={{fontSize: 26, fontWeight: 'bold'}}>Profile Screen</Text>
+               <InputNombre/>
+               <InputApellido/>
+               <BotonEnviar/>
         </View>
     )
 }
