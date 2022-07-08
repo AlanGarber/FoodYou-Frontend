@@ -5,8 +5,8 @@ export default function HistoryScreen({navigation}) {
     return(
         <View style={{flex: 1, alignItems: 'center', justifyContent:'center'}}>
             <Text
-                onPress={()=> navigation.navigate('History')}
-                style={{fontSize: 26, fontWeight: 'bold'}}>History Screen</Text>
+                onPress={()=> navigation.navigate('Search')}
+                style={{fontSize: 26, fontWeight: 'bold'}}>Search Screen</Text>
         </View>
     )
 }
