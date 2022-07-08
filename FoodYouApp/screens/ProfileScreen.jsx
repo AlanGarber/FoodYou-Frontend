@@ -15,3 +15,5 @@ export default function ProfileScreen({navigation}) {
         </View>
     )
 }
+
+//USAR MAP PARA RECORRER LA CANTIDAD DE CHECKBOXES
