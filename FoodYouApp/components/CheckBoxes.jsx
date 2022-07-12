@@ -1,7 +1,7 @@
 import * as React from "react";
 import { CheckBox } from "@rneui/base";
 
-const CheckBoxed = (props) => {
+const CheckBoxes = (props) => {
   const [checked, setChecked] = React.useState(false);
   return (
     <CheckBox
@@ -23,4 +23,4 @@ const CheckBoxed = (props) => {
   );
 }
 
-export default CheckBoxed
+export default CheckBoxes

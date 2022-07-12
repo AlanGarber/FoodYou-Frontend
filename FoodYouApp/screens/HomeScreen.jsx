@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, ImageBackground, InlineImage, TouchableO
 import { useNavigation } from '@react-navigation/native';
 import BotonCamara from '../components/BotonCamara'
 import Header from '../components/Header.jsx';
+import Cards from '../components/Cards';
 
 const Home =({navigation})=>{
   
